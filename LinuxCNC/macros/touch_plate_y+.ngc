@@ -1,0 +1,28 @@
+o<touch_plate_y+> sub
+
+#<PlateThickness> =      .247     ( Thickness of lip on touchplate )
+#<FastProbe> =            30     ( How fast should the tool probe for first touch )
+#<SlowProbe> =             5     ( Feed rate for slow search on second probing )
+#<Backoff>   =           .25     ( How far to back off after probing )
+
+( Set current Y position to 0 so that we will always be moving backward )
+
+G10 L20 P0 Y0
+
+G91
+F[#<FastProbe>]
+G38.2 Y1
+
+G1 Y-.1 F[#<FastProbe>]
+
+F[#<SlowProbe>]
+G4 P0.5
+g38.2 Y.2
+
+G1 Y-.25 F[#<FastProbe>] 
+
+G10 L20 P0 Y[-1*[#<Backoff> + #<PlateThickness>] - [#5410*.5]]
+
+o<touch_plate_y+> endsub
+
+M2

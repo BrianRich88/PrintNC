@@ -1,0 +1,6 @@
+o<Zero_XY> sub
+	
+G92 X0 Y0
+	
+o<Zero_XY> endsub
+M2

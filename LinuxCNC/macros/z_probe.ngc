@@ -1,0 +1,22 @@
+o<z_probe> sub
+	
+G91
+G28 Z0
+G90
+G53 G0 X85 Y25
+#<z>=#<_z> (save current Z position)
+G91
+F200
+G38.2 Z-150
+G92 Z23.943
+G1 Z5 F1000
+F100
+G4 P0.5
+G38.2 Z-100
+G92 Z23.943
+G4 P0.5
+G1 Z15 F1000
+G90
+
+o<z_probe> endsub
+M2

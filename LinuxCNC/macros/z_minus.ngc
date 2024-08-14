@@ -1,0 +1,15 @@
+o<z_minus> sub
+
+G91
+G38.2 Z-100 F200
+G92 Z0
+G1 Z5 F1000
+G4 P0.5
+G38.2 Z-100 F100
+G92 Z0
+G4 P0.5
+G1 Z15 F1000
+G90
+
+o<z_minus> endsub
+M2
